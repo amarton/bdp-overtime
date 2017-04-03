@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--Basic page needs-->
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!--Mobile Specific Metas-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <!--CSS-->
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!--Fonts-->
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Old+Standard+TT|Lato|Montserrat">
+        <!--Facebook Stuff-->
+        <meta property="og:title" content="">
+        <meta property="og:url" content="">
+        <meta property="og:image" content="">
+        <meta property="og:site_name" content="The Baltimore Sun">
+        <meta property="og:description" content="">
+        <meta property="fb:app_id" content="310302989040998">
+        <!--Twitter Stuff-->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@baltimoresun">
+        <meta name="twitter:creator" content="">
+        <meta name="twitter:title" content="">
+        <meta name="twitter:description" content="">
+        <meta name="twitter:image" content="">
+        <meta name="twitter:domain" content="baltimoresun.com">
+
+                <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js'></script>
+
+
+        <!-- Ad script - Start: GPT Async -->
+        <script type='text/javascript'>
+            var gptadslots=[];
+            var googletag = googletag || {};
+            googletag.cmd = googletag.cmd || [];
+            (function(){ var gads = document.createElement('script');
+                gads.async = true; gads.type = 'text/javascript';
+                var useSSL = 'https:' == document.location.protocol;
+                gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+                var node = document.getElementsByTagName('script')[0];
+                node.parentNode.insertBefore(gads, node);
+            })();
+            googletag.cmd.push(function() {
+                //Adslot 1 declaration
+                gptadslots[1]= googletag.defineSlot('/4011/trb.baltimoresun', [[728,90]],'div-gpt-ad-529734999113274866-1').setTargeting('pos',['1']).addService(googletag.pubads());
+                googletag.pubads().setTargeting('ptype',['sf']);
+                googletag.pubads().enableAsyncRendering();
+                googletag.enableServices();
+            });
+        </script>
+        <!-- End: GPT -->
+    </head>
+    <body>
+        <!-- Omniture -->
+        <script>
+            ((((window.trb || (window.trb = {})).data || (trb.data = {})).metrics || (trb.data.metrics = {})).thirdparty = {
+                pageName: 'bs:dataproject:news:maryland:shootings-near-you:dataproject.',
+                channel: 'news:maryland',
+                server: 'data.baltimoresun.com',
+                hier1: 'baltimoresun:news:maryland',
+                hier2: 'news:maryland',
+                prop1: 'D=pageName',
+                prop2: 'news',
+                prop38: 'dataproject',
+                prop57: 'D=c38',
+                eVar20: 'baltimoresun',
+                eVar21: 'D=c38',
+                eVar34: 'D=ch',
+                eVar35: 'D=pageName',
+                events:''
+            });  
+        </script>
+        <script src="http://www.baltimoresun.com/thirdpartyservice?disablessor=true" async></script>
+        <!-- Navbar -->
+        <div data-trb-thirdpartynav></div>
+
+        <div class="container">
+           <h1>Baltimore Police Department Overtime Expenditures</h1>
+            <!-- BEM example. -->
+          
+
+
+
+<p>Chatter chatter chatter chatter chatter chatter chatter chatter chatter chatter chatter chatter chatter</p>
+<br><br>
+
+<div style="width:50%;">
+    <h2>BPD Overtime Expenditure Totals FY 2012 - FY 2017</h2>
+    <canvas id="barChartTotals"></canvas>
+<em>* 2017 still in progress</em>
+</div>
+
+
+
+<div style="clear:both;padding-top:50px;"></div>
+
+
+<div style="width:90%;">
+    <h2>BPD Overtime Expenditures FY 2015 - FY 2017</h2>
+    <canvas id="lineChart2015to2017"></canvas>
+</div>
+
+
+<div style="clear:both;padding-top:50px;"></div>
+
+
+<div style="width:90%;">
+    <h2>BPD Overtime Expenditures FY 2012 - FY 2014</h2>
+    <canvas id="lineChart2012to2014"></canvas>
+</div>
+
+
+
+<script>
+
+
+
+//BAR CHART
+
+var ctx = document.getElementById("barChartTotals");
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["2012", "2013", "2014", "2015", "2016", "2017*"],
+        datasets: [{
+            label: 'BPD Overtime Expenditure Totals',
+            data: [25414695, 25044746, 28900246, 34955368, 42438290, 33597514],
+            backgroundColor: [
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(54, 162, 235, 0.2)'
+                ],
+            borderColor: [
+                'rgba(54, 162, 235, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(54, 162, 235, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+      // THESE OPTIONS ADD COMMAS IN TOOLTIPS AND Y-AXIS
+    options: {
+            tooltips: {
+              callbacks: {
+                    label: function(tooltipItem, data) {
+                        var value = data.datasets[0].data[tooltipItem.index];
+                        value = value.toString();
+                        value = value.split(/(?=(?:...)*$)/);
+                        value = value.join(',');
+                        return value;
+                    }
+              } // end callbacks:
+            }, //end tooltips
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true,
+                        userCallback: function(value, index, values) {
+                            // Convert the number to a string and splite the string every 3 charaters from the end
+                            value = value.toString();
+                            value = value.split(/(?=(?:...)*$)/);
+                            value = value.join(',');
+                            return value;
+                        }
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                    }
+                }]
+            }
+        }
+});
+
+
+
+
+
+
+
+//LINE CHART 2015 - 2017
+
+
+var ctx = document.getElementById('lineChart2015to2017').getContext('2d');
+var myChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ['7/9/14', '7/23/14', '8/6/14', '8/20/14', '9/3/14', '9/17/14', '10/1/14', '10/15/14', '10/29/14', '11/12/14', '11/26/14', '12/10/14', '12/24/14', '1/7/15', '1/21/15', '2/4/15', '2/18/15', '3/4/15', '3/18/15', '4/1/15', '4/15/15', '4/29/15', '5/13/15', '5/27/15', '6/10/15', '6/24/15', '7/8/15', '7/22/15', '8/5/15', '8/19/15', '9/2/15', '9/16/15', '9/30/15', '10/14/15', '10/28/15', '11/11/15', '11/25/15', '12/9/15', '12/23/15', '1/6/16', '1/20/16', '2/3/16', '2/17/16', '3/2/16', '3/16/16', '3/30/16', '4/13/16', '4/27/16', '5/11/16', '5/25/16', '6/8/16', '6/22/16', '7/6/16', '7/20/16', '8/3/16', '8/17/16', '8/31/16', '9/14/16', '9/28/16', '10/15/16', '10/29/16', '11/12/16', '11/26/16', '12/10/16', '12/24/16', '1/7/17', '1/21/17', '2/4/17', '2/18/17', '3/4/17'],
+    datasets: [{
+      label: 'BPD Overtime Expenditures FY2015 - FY 2017',
+      data: [1185615, 1372163, 1343768, 1412029, 1400115, 1698838, 1442581, 984429, 858665, 1008847, 1034056, 1431307, 1489862, 1227491, 872894, 829784, 1001934, 940903, 1038813, 1107544, 1139138, 2691649, 3836632, 1255810, 1161629, 1188872, 1467911, 1799692, 1595464, 1661299, 1626668, 1714874, 1727347, 1728835, 1738058, 1803894, 1488915, 1651293, 2986693, 1266770, 1487344, 2647841, 1457015, 1831680, 1744400, 1587835, 1027125, 1232570, 1092802, 1488398, 1202086, 1381482, 1964760, 1965268, 1803495, 1673235, 1653505, 1778275, 1765204, 2187793, 1802800, 1988600, 1595356, 2145302, 1781016, 1752070, 1951811, 2043412, 1883149, 1862464],
+      backgroundColor: "rgba(54, 162, 235, 0.2)"
+    }]
+  },
+    // THESE OPTIONS ADD COMMAS IN TOOLTIPS AND Y-AXIS
+    options: {
+            tooltips: {
+              callbacks: {
+                    label: function(tooltipItem, data) {
+                        var value = data.datasets[0].data[tooltipItem.index];
+                        value = value.toString();
+                        value = value.split(/(?=(?:...)*$)/);
+                        value = value.join(',');
+                        return value;
+                    }
+              } // end callbacks:
+            }, //end tooltips
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true,
+                        userCallback: function(value, index, values) {
+                            // Convert the number to a string and splite the string every 3 charaters from the end
+                            value = value.toString();
+                            value = value.split(/(?=(?:...)*$)/);
+                            value = value.join(',');
+                            return value;
+                        }
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                    }
+                }]
+            }
+        }
+});
+
+
+
+
+
+
+
+
+
+
+
+//LINE CHART 2012 - 2014
+
+
+var ctx = document.getElementById('lineChart2012to2014').getContext('2d');
+var myChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ['7/13/11', '7/27/11', '8/10/11', '8/24/11', '9/7/11', '9/21/11', '10/5/11', '10/19/11', '11/2/11', '11/16/11', '11/30/11', '12/14/11', '12/28/11', '1/11/12', '1/25/12', '2/8/12', '2/22/12', '3/7/12', '3/21/12', '4/4/12', '4/18/12', '5/2/12', '5/16/12', '5/30/12', '6/13/12', '6/27/12', '7/11/12', '7/25/12', '8/8/12', '8/22/12', '9/5/12', '9/19/12', '10/3/12', '10/17/12', '10/31/12', '11/14/12', '11/28/12', '12/12/12', '12/26/12', '1/9/13', '1/23/13', '2/6/13', '2/20/13', '3/6/13', '3/20/13', '4/3/13', '4/17/13', '5/1/13', '5/15/13', '5/29/13', '6/12/13', '6/26/13', '7/10/13', '7/24/13', '8/7/13', '8/21/13', '9/4/13', '9/18/13', '10/2/13', '10/16/13', '10/30/13', '11/13/13', '11/27/13', '12/11/13', '12/25/13', '1/8/14', '1/22/14', '2/5/14', '2/19/14', '3/5/14', '3/19/14', '4/2/14', '4/16/14', '4/30/14', '5/14/14', '5/28/14', '6/11/14', '6/25/14'],
+    datasets: [{
+      label: 'BPD Overtime Expenditures FY2012 - FY 2014',
+      data: [1377257, 1440197, 1136022, 1095100, 1268528, 1050641, 998090, 908700, 885978, 943536, 999335, 998519, 903094, 947402, 838457, 883669, 800612, 870064, 870798, 951033, 921163, 851555, 759762, 843497, 936754, 934932, 861056, 913737, 912903, 999095, 957939, 967053, 870016, 886859, 1675489, 1455212, 952234, 871181, 776427, 946218, 850923, 891227, 809389, 800223, 922956, 843972, 862747, 864791, 872612, 1023371, 1101072, 1156044, 1407426, 1272238, 1291793, 1330968, 1306051, 1340494, 1206543, 1200991, 1124205, 1224057, 1046993, 888673, 803042, 963397, 793320, 878557, 1012142, 843346, 1005477, 931049, 1113693, 1132394, 1077544, 1242754, 1242690, 1220410],
+      backgroundColor: "rgba(54, 162, 235, 0.2)"
+    }]
+  },
+    // THESE OPTIONS ADD COMMAS IN TOOLTIPS AND Y-AXIS
+    options: {
+            tooltips: {
+              callbacks: {
+                    label: function(tooltipItem, data) {
+                        var value = data.datasets[0].data[tooltipItem.index];
+                        value = value.toString();
+                        value = value.split(/(?=(?:...)*$)/);
+                        value = value.join(',');
+                        return value;
+                    }
+              } // end callbacks:
+            }, //end tooltips
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true,
+                        userCallback: function(value, index, values) {
+                            // Convert the number to a string and splite the string every 3 charaters from the end
+                            value = value.toString();
+                            value = value.split(/(?=(?:...)*$)/);
+                            value = value.join(',');
+                            return value;
+                        }
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                    }
+                }]
+            }
+        }
+});
+
+
+
+</script>
+
+
+
+<div style="clear:both;padding-top:50px;"></div>
+
+            <!-- Beginning Async AdSlot 1 for Ad unit trb.baltimoresun  ### size: [[728,90]] -->
+            <!-- Adslot's refresh function: googletag.pubads().refresh([gptadslots[1]]) -->
+            <div id="leaderboard">
+                <div id='div-gpt-ad-529734999113274866-1'>
+                    <script type='text/javascript'>
+                        googletag.cmd.push(function() { googletag.display('div-gpt-ad-529734999113274866-1'); });
+                    </script>
+                </div>
+            </div>
+            <!-- End AdSlot 1 -->
+        </div>
+
+
+        <footer>
+            <div>Design & Development by Adam Marton</div>
+            <div>Copyright 2017. All rights reserved.</div>
+            <div>
+                <a href="http://www.tronc.com/privacy-policy/">Privacy Policy</a>
+                <span> | </span>
+                <a href="http://www.tronc.com/central-terms-of-service/">Terms of Service</a>
+            </div>
+        </footer>
+        <!--Javascript-->
+        <script src="js/min/jquery-3.0.0.min.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
