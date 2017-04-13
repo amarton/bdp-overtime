@@ -3,7 +3,7 @@
     <head>
         <!--Basic page needs-->
         <meta charset="utf-8">
-        <title></title>
+        <title>Baltimore Police Department Overtime Expenditures | The Baltimore Sun</title>
         <meta name="description" content="">
         <meta name="author" content="">
         <!--Mobile Specific Metas-->
@@ -14,18 +14,18 @@
         <!--Fonts-->
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Old+Standard+TT|Lato|Montserrat">
         <!--Facebook Stuff-->
-        <meta property="og:title" content="">
-        <meta property="og:url" content="">
+        <meta property="og:title" content="Graphic: BPD Overtime">
+        <meta property="og:url" content="http://data.baltimoresun.com/graphics/bdp-overtime/">
         <meta property="og:image" content="">
         <meta property="og:site_name" content="The Baltimore Sun">
-        <meta property="og:description" content="">
+        <meta property="og:description" content="Baltimore Police Department Overtime Expenditures 2012 - 2017">
         <meta property="fb:app_id" content="310302989040998">
         <!--Twitter Stuff-->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@baltimoresun">
-        <meta name="twitter:creator" content="">
-        <meta name="twitter:title" content="">
-        <meta name="twitter:description" content="">
+        <meta name="twitter:creator" content="Baltimore Sun">
+        <meta name="twitter:title" content="BPD Overtime">
+        <meta name="twitter:description" content="Baltimore Police Department Overtime Expenditures 2012 - 2017">
         <meta name="twitter:image" content="">
         <meta name="twitter:domain" content="baltimoresun.com">
 
@@ -58,7 +58,7 @@
         <!-- Omniture -->
         <script>
             ((((window.trb || (window.trb = {})).data || (trb.data = {})).metrics || (trb.data.metrics = {})).thirdparty = {
-                pageName: 'bs:dataproject:news:maryland:shootings-near-you:dataproject.',
+                pageName: 'bs:dataproject:news:maryland:bpd-overtime:dataproject.',
                 channel: 'news:maryland',
                 server: 'data.baltimoresun.com',
                 hier1: 'baltimoresun:news:maryland',
@@ -85,13 +85,20 @@
 
 
 
-<p>Chatter chatter chatter chatter chatter chatter chatter chatter chatter chatter chatter chatter chatter</p>
-<br><br>
+<p>The Baltimore Police Department has spent over $25 million in overtime each year since 2012. In 2016, overtime expenditures exceeded $42 million. Police are on track to spend over a millon dollars a month in 2017 on overtime. The charts below track police overtime expenditures by year and by specific pay periods from 2012 - 2017.</p>
 
-<div style="width:50%;">
+
+<div style="width:500px;"">
+    <div class="icon-facebook" style="cursor:pointer;float:left;padding-right:10px;"><img src="images/fb-icon.png" style="width:30px;"></div>
+    <div class="icon-twitter" style="cursor:pointer;float:left;"><img src="images/twitter-icon.png" style="width:30px;"></div>
+</div>
+
+<div style="clear:both;"></div>
+
+<div style="width:90%;">
     <h2>BPD Overtime Expenditure Totals FY 2012 - FY 2017</h2>
     <canvas id="barChartTotals"></canvas>
-<em>* 2017 still in progress</em>
+<em>* Projected. Year to date total is $33,597,514 as of 03/04/17</em>
 </div>
 
 
@@ -114,6 +121,7 @@
 </div>
 
 
+<br><br><em>Source: Baltimore Police Department</em>
 
 <script>
 
@@ -128,7 +136,7 @@ var myChart = new Chart(ctx, {
         labels: ["2012", "2013", "2014", "2015", "2016", "2017*"],
         datasets: [{
             label: 'BPD Overtime Expenditure Totals',
-            data: [25414695, 25044746, 28900246, 34955368, 42438290, 33597514],
+            data: [25414695, 25044746, 28900246, 34955368, 42438290, 46000000],
             backgroundColor: [
                 'rgba(54, 162, 235, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
